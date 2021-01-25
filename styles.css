@@ -23,9 +23,11 @@ body {
 }
 .calculator-wrapper .output .top-output {
     font-size: 15px;
+    height: 100%;
 }
 .calculator-wrapper .output .bottom-output {
     font-size: 20px;
+    height: 100%;
 }
 .calculator-wrapper {
     display: grid;
