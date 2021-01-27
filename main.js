@@ -6,7 +6,12 @@ class Calculator {
     }
     delete() {
         this.currentNumEl.innerText = this.currentNumEl.innerText.slice(0, -1);
-        this.currentNum = this.currentNumEl.innerText;
+        if((this.prevNum)&&(this.currentNum)) {
+            this.currentNum = this.currentNumEl.innerText;
+        }
+        if((this.prevNum)&&(!this.currentNum)) {
+            this.prevNum = this.currentNumEl.innerText;
+        }
     }
     clearAll() {
         this.prevNum       = '';
@@ -27,7 +32,8 @@ class Calculator {
         if(    (this.prevNum != '')
             && (this.operation == undefined)
         ) {
-            this.currentNumEl.innerText = this.currentNumEl.innerText + action;
+            this.prevNumEl.innerText = this.currentNumEl.innerText + action;
+            this.currentNumEl.innerText = '';
             this.operation = action.toString();
             return;
         }
@@ -127,6 +133,9 @@ action.forEach(singleAction => {
 })
 eq.addEventListener('click', () => {
     calculator.computeEq();
+})
+del.addEventListener('click', () => {
+    calculator.delete();
 })
 allClr.addEventListener('click', () => {
     calculator.clearAll();
