@@ -25,6 +25,13 @@ class Calculator {
             return;
         }
         if(    (this.prevNum != '')
+            && (this.operation == undefined)
+        ) {
+            this.currentNumEl.innerText = this.currentNumEl.innerText + action;
+            this.operation = action.toString();
+            return;
+        }
+        if(    (this.prevNum != '')
             && (this.operation != undefined)
             && (this.currentNum == '')
         ) {
@@ -35,12 +42,8 @@ class Calculator {
             && (this.currentNum != '')
         ) {
             this.compute(this.operation, this.prevNum, this.currentNum);
-        }
-        if(    (this.prevNum != '')
-            && (this.operation == undefined)
-        ) {
-            this.currentNumEl.innerText = this.currentNumEl.innerText + action;
-            this.operation = action.toString();
+            this.operation = action;
+            this.prevNumEl.innerText = this.prevNumEl.innerText + action;
         }
     }
     setNumber(number) {
