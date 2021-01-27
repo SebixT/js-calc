@@ -4,7 +4,7 @@
     font-weight: 400;
 }
 body {
-    background: linear-gradient(-45deg, #86b0f0, #38537d);
+    background: linear-gradient(-45deg, #86b0f0, #01183d);
 }
 .calculator-wrapper {
     display: block;
@@ -17,7 +17,7 @@ body {
     align-items: end;
     justify-content: space-evenly;
     grid-column: 1 / -1;
-    background-color: rgba(2, 2, 2, .5);
+    background-color: rgba(2, 2, 2, .3);
     border-radius: 10px;
     padding: 10px;
 }
@@ -38,7 +38,7 @@ body {
     min-height: 100vh;
 }
 .calculator-wrapper button {
-    background-color: rgba(173, 173, 173, 1);
+    background-color: rgba(223, 223, 223, .8);
     border: 1px solid rgb(39, 39, 39);
     border-radius: 5px;
     margin: 1px;
