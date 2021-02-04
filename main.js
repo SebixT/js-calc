@@ -4,6 +4,13 @@ class Calculator {
         this.prevNumEl    = prevNumEl;
         this.clearAll();
     }
+    clearAll() {
+        this.prevNum       = '';
+        this.currentNum    = '';
+        this.result        = 0;
+        this.operation     = undefined;
+        this.clrScreen();
+    }
     delete() {
         this.currentNumEl.innerText = this.currentNumEl.innerText.slice(0, -1);
         if((this.prevNum)&&(this.currentNum)) {
@@ -13,14 +20,8 @@ class Calculator {
             this.prevNum = this.currentNumEl.innerText;
         }
     }
-    clearAll() {
-        this.prevNum       = '';
-        this.currentNum    = '';
-        this.result        = 0;
-        this.operation     = undefined;
-        this.clrScreen();
-    }
     computeEq() {
+        if((this.operation)&&(this.prevNum)&&(this.currentNum))
         this.compute(this.operation, this.prevNum, this.currentNum);
     }
     setOperation(action) {
