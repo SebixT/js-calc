@@ -33,7 +33,7 @@ class Calculator {
         if(    (this.prevNum != '')
             && (this.operation == undefined)
         ) {
-            this.prevNumEl.innerText = this.currentNumEl.innerText + action;
+            this.prevNumEl.innerText = this.prevNumEl.innerText  + this.currentNumEl.innerText + action;
             this.currentNumEl.innerText = '';
             this.operation = action.toString();
             return;
