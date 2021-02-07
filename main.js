@@ -42,6 +42,9 @@ class Calculator {
             && (this.operation != undefined)
             && (this.currentNum == '')
         ) {
+            this.operation = action.toString();
+            this.prevNumEl.innerText = this.prevNumEl.innerText + action;
+            
             return;
         }
         if(    (this.prevNum != '')
@@ -69,7 +72,8 @@ class Calculator {
                 return;
             }
         if(    (this.prevNum != '') 
-            && (this.operation != undefined)) {
+            && (this.operation != undefined)
+            ) {
                 this.currentNum             = this.currentNum .toString() + number.toString();
                 this.prevNumEl.innerText    = this.prevNum + this.operation;
                 this.currentNumEl.innerText = this.currentNum;
